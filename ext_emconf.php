@@ -7,7 +7,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'constraints' => array(
 		'depends' => array(
 			'ods_osm' => '2.0.0-',
-			'tt_address' => '2.0.0-2.99.99',
+			'tt_address' => '3.0.0-',
 			'typo3' => '6.2.0-7.99.99',
 		),
 		'conflicts' => array(
@@ -16,6 +16,6 @@ $EM_CONF[$_EXTKEY] = array(
 		),
 	),
 	'state' => 'stable',
-	'version' => '2.0.0',
+	'version' => '3.0.0',
 );
 ?>
