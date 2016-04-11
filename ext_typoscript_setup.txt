@@ -1,7 +1,7 @@
 plugin.tx_odsosm_pi1 {
 	marker {
 		tt_address =
-		tt_address_group =
+		sys_category =
 	}
 
 	popup {
