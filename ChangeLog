@@ -1,3 +1,6 @@
+2016-04-12 Robert Heel <typo3@bobosch.de>
+	* Bugfix: Check if database field exists in update script.
+
 2016-04-11 Robert Heel <typo3@bobosch.de>
 	* Bugfix: TS template with sys_category instead of tt_address_group.
 

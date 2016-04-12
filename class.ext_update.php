@@ -75,32 +75,40 @@ class ext_update {
 	 */
 	protected function moveField($table,$from,$to) {
 		$title = 'Update table "' . $table . '": Move field from "' . $from . '" to "' . $to . '"';
-		$message = 'Move data in item ';
 		$status = \TYPO3\CMS\Core\Messaging\FlashMessage::OK;
+		
+		$fieldsInDatabase = $GLOBALS['TYPO3_DB']->admin_get_fields($table);
+		if(is_array($fieldsInDatabase[$from])) {
+			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+				'*',
+				$table,
+				$from . '>""'
+			);
 
-		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
-			'*',
-			$table,
-			$from . '>""'
-		);
-
-		if ($res) {
-			while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
-				$message.= $row['uid'] . ', ';
-				$UPDATEres = $GLOBALS['TYPO3_DB']->exec_UPDATEquery(
-					$table,
-					'uid=' . $row['uid'],
-					array(
-						$from => null,
-						$to => $row[$from]
-					)
-				);
-				if (!$UPDATEres) {
-					$status = \TYPO3\CMS\Core\Messaging\FlashMessage::ERROR;
+			if ($res) {
+				$moved = array();
+				while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
+					$moved[] = $row['uid'];
+					$UPDATEres = $GLOBALS['TYPO3_DB']->exec_UPDATEquery(
+						$table,
+						'uid=' . $row['uid'],
+						array(
+							$from => null,
+							$to => $row[$from]
+						)
+					);
+					if (!$UPDATEres) {
+						$status = \TYPO3\CMS\Core\Messaging\FlashMessage::ERROR;
+					}
+				}
+				if ($moved) {
+					$message = 'Move data in item ' . implode(',', $moved);
+				} else {
+					$message = 'No data to move.';
 				}
 			}
 		} else {
-			$message = 'No data to move.';
+			$message = 'Field does not exist.';
 		}
 
 		$this->messageArray[] = array($status, $title, $message);
