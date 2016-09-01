@@ -15,4 +15,7 @@ $GLOBALS['TCA']['tt_address']['columns']['longitude']['config']['wizards'] = arr
 		'JSopenParams' => 'height=600,width=800,status=0,menubar=0,scrollbars=0',
 	)
 );
+
+
+$GLOBALS['TCA']['tt_address']['palettes']['address']['showitem'] = $GLOBALS['TCA']['tt_address']['palettes']['address']['showitem'].',latitude,longitude';
 ?>
