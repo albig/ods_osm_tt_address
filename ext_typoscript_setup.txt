@@ -4,6 +4,10 @@ plugin.tx_odsosm_pi1 {
 		sys_category =
 	}
 
+	icon {
+		tt_address = IMAGE
+	}
+
 	popup {
 		tt_address = COA
 		tt_address {
