@@ -1,5 +1,8 @@
 2016-09-01 Robert Heel <typo3@bobosch.de>
-	* Bug #77686: No LAT and LON input fields in backend form of tt_adress records (Thanks to Volker Burggräf).
+	* Bug #77686: Removed again, was fixed in tt_address 3.1.0.
+
+2016-09-01 Robert Heel <typo3@bobosch.de>
+	* Bug #77686: No LAT and LON input fields in backend form of tt_address records (Thanks to Volker Burggräf).
 
 2016-04-14 Robert Heel <typo3@bobosch.de>
 	* Add: Define marker icon with TS IMAGE object.
