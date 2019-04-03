@@ -8,7 +8,7 @@ $EM_CONF[$_EXTKEY] = array(
 		'depends' => array(
 			'ods_osm' => '2.0.0-',
 			'tt_address' => '3.1.0-',
-			'typo3' => '6.2.0-8.99.99',
+			'typo3' => '7.6.0 - 9.5.99',
 		),
 		'conflicts' => array(
 		),
