@@ -1,0 +1,26 @@
+{
+  "name": "bobosch/ods_osm_tt_address",
+  "description": "This extends ods_osm to use tt_address records",
+  "type": "typo3-cms-extension",
+  "keywords": [
+    "TYPO3",
+    "OSM",
+    "OpenStreetMap"
+  ],
+  "homepage": "https://github.com/bobosch/ods_osm_tt_address",
+  "support": {
+    "issues": "https://github.com/bobosch/ods_osm_tt_address/issues"
+  },
+  "authors": [
+    {
+      "name": "Robert Heel",
+      "email": "typo3@bobosch.de",
+      "role": "Developer"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": "~7.2.0",
+    "typo3/cms-core": "^9.5.0"
+  }
+}
