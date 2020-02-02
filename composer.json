@@ -1,5 +1,5 @@
 {
-  "name": "bobosch/ods_osm_tt_address",
+  "name": "bobosch/ods-osm-tt-address",
   "description": "This extends ods_osm to use tt_address records",
   "type": "typo3-cms-extension",
   "keywords": [
@@ -20,7 +20,6 @@
   ],
   "license": "GPL-2.0-or-later",
   "require": {
-    "php": "~7.2.0",
     "typo3/cms-core": "^9.5.0"
   }
 }
